@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+Route::get('/user/profile', function () {
+    //
+})->name('/');
+
+Route::get('/user/{id}', function ($id) {
+    return 'User '.$id;
+});
+
+Route::get('/user/{name?}', function ($name = 'John') {
+    return $name;
+});
+
+Route::redirect('/hi', '/welcome'); 
+
+
